@@ -8,6 +8,7 @@ import posixpath
 
 ARCHIVOS_DIR = os.path.join(os.path.dirname(__file__), "archivos")
 
+"""La estructura dels directoris d'un ubuntu"""
 VIRTUAL_DIRS = {
     "/",
     "/home",
@@ -32,7 +33,7 @@ def _add_entry(dirpath, name, is_dir=False, size=0):
     if dirpath not in _extras:
         _extras[dirpath] = []
     full_path = dirpath.rstrip("/") + "/" + name
-    _ocultos.discard(full_path)  # si va ser rm'd, ressuscitar-lo
+    _ocultos.discard(full_path)
     now = datetime.datetime.now().strftime("%b %d %H:%M")
     for e in _extras[dirpath]:
         if e["name"] == name:
@@ -45,6 +46,7 @@ def _add_entry(dirpath, name, is_dir=False, size=0):
 def _norm(path):
     return posixpath.normpath(path)
 
+"""Virtual, tota la informació de text pla, esta tret d'un sistema ubuntu 22.04."""
 VIRTUAL_FS = {
     "/home/ubuntu/.bashrc": (
         "# ~/.bashrc: executed by bash(1) for non-login shells.\n"
@@ -149,6 +151,7 @@ VIRTUAL_FS = {
     ),
 }
 
+"""Data, tota la informació de text pla, esta tret d'un sistema ubuntu 22.04."""
 LS_DATA = {
     "/": {
         "short": "bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var",
@@ -474,7 +477,6 @@ class ComandoGrep(ComandoHoneypot):
 
         stdin = getattr(self, "_stdin", None)
 
-        # no file and no stdin → nothing to search
         if not files and stdin is None:
             return ""
 
@@ -663,6 +665,7 @@ class ComandoSsh(ComandoHoneypot):
 
 class ComandoWget(ComandoHoneypot):
     """Simula una descàrrega amb barra de progrés animada i velocitat variable. La URL i el fitxer descarregat queden registrats a archivos/downloads/."""
+    """La animación de la barra esta hecho con IA, porque no sabiamos como falsificar esto"""
     def executar(self):
         if not self.args:
             return "wget: missing URL\nUsage: wget [OPTION]... [URL]..."
@@ -726,7 +729,6 @@ class ComandoSudo(ComandoHoneypot):
     )
 
     def executar(self):
-        # sudo -l
         if "-l" in self.args:
             return (
                 "Matching Defaults entries for ubuntu on ubuntu-server:\n"
@@ -850,6 +852,7 @@ class ComandoCowsay(ComandoHoneypot):
 
 class ComandoSl(ComandoHoneypot):
     """Animació ASCII d'un tren de vapor que travessa el terminal. S'executa quan l'atacant escriu sl per error de tecleig en lloc de ls."""
+    """La animación del tren está hecha con IA, porque no sabíamos cómo falsificar esto de forma creíble."""
     _TREN = [
         r"      ====        ________                ___________",
         r"  _D _|  |_______/        \__I_I_____===__|_________|",
@@ -1246,4 +1249,6 @@ class ComandoNoEncontrado(ComandoHoneypot):
         self.nom = nom
 
     def executar(self):
+        from enriquecedor import enriquecer
+        enriquecer(self.nom)
         return f"bash: {self.nom}: command not found"

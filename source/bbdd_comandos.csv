@@ -1,0 +1,863 @@
+comando,fase_origen,fase_destino,patron
+nmap,0,1,Escaneo de red
+masscan,0,1,Escaneo de red masivo
+zmap,0,1,Escaneo de red masivo
+unicornscan,0,1,Escaneo de red
+arp-scan,0,1,Escaneo ARP
+netdiscover,0,1,Descubrimiento de red
+ping,0,1,Reconocimiento ICMP
+fping,0,1,Reconocimiento ICMP masivo
+hping3,0,1,Reconocimiento avanzado
+hping,0,1,Reconocimiento avanzado
+nping,0,1,Reconocimiento de red
+tcping,0,1,Reconocimiento TCP
+traceroute,0,1,Reconocimiento de ruta
+tracepath,0,1,Reconocimiento de ruta
+mtr,0,1,Reconocimiento de ruta
+ncat,0,1,Reconocimiento con netcat
+scapy,0,1,Reconocimiento con Scapy
+p0f,0,1,Fingerprinting pasivo
+xprobe2,0,1,Fingerprinting OS
+queso,0,1,Fingerprinting OS
+theharvester,0,1,OSINT correos y dominios
+recon-ng,0,1,OSINT automatizado
+maltego,0,1,OSINT grafico
+spiderfoot,0,1,OSINT automatizado
+dmitry,0,1,OSINT basico
+osrframework,0,1,OSINT redes sociales
+metagoofil,0,1,OSINT metadatos
+creepy,0,1,OSINT geolocalizacion
+trape,0,1,OSINT rastreo
+shodan,0,1,OSINT dispositivos expuestos
+censys,0,1,OSINT certificados
+fofa,0,1,OSINT dispositivos
+zoomeye,0,1,OSINT dispositivos
+whois,0,1,Reconocimiento de dominio
+dig,0,1,Reconocimiento DNS
+host,0,1,Reconocimiento DNS
+nslookup,0,1,Reconocimiento DNS
+fierce,0,1,Enumeracion DNS
+dnsrecon,0,1,Enumeracion DNS
+dnsenum,0,1,Enumeracion DNS
+subfinder,0,1,Descubrimiento de subdominios
+amass,0,1,Descubrimiento de subdominios
+assetfinder,0,1,Descubrimiento de subdominios
+findomain,0,1,Descubrimiento de subdominios
+dnsx,0,1,Resolucion DNS masiva
+massdns,0,1,Resolucion DNS masiva
+sublist3r,0,1,Descubrimiento de subdominios
+knockpy,0,1,Enumeracion de subdominios
+dnstwist,0,1,Deteccion de typosquatting
+whatweb,0,1,Fingerprinting web
+wafw00f,0,1,Deteccion de WAF
+httpx,0,1,Reconocimiento HTTP masivo
+httprobe,0,1,Reconocimiento HTTP
+aquatone,0,1,Capturas web masivas
+eyewitness,0,1,Capturas web
+gowitness,0,1,Capturas web
+webscreenshot,0,1,Capturas web
+gau,0,1,Recoleccion de URLs
+waybackurls,0,1,Recoleccion de URLs historicas
+hakrawler,0,1,Crawling web
+katana,0,1,Crawling web
+gospider,0,1,Crawling web
+photon,0,1,Crawling web OSINT
+urlcrazy,0,1,Deteccion de typosquatting
+recon-ng,0,1,Framework OSINT
+maltego,0,1,Framework OSINT grafico
+osmedeus,0,1,Reconocimiento automatizado
+reconftw,0,1,Reconocimiento automatizado
+rengine,0,1,Reconocimiento automatizado
+sn0int,0,1,OSINT framework
+nikto,1,2,Enumeracion web
+gobuster,1,2,Fuerza bruta de directorios
+dirb,1,2,Fuerza bruta de directorios
+dirbuster,1,2,Fuerza bruta de directorios
+wfuzz,1,2,Fuzzing web
+ffuf,1,2,Fuzzing web rapido
+feroxbuster,1,2,Fuerza bruta de directorios
+dirsearch,1,2,Busqueda de directorios
+rustbuster,1,2,Fuerza bruta de directorios
+arjun,1,2,Descubrimiento de parametros
+paramspider,1,2,Descubrimiento de parametros
+x8,1,2,Descubrimiento de parametros
+burpsuite,1,2,Proxy web y scanner
+zaproxy,1,2,Scanner de vulnerabilidades web
+owasp-zap,1,2,Scanner de vulnerabilidades web
+skipfish,1,2,Scanner web activo
+arachni,1,2,Scanner web
+w3af,1,2,Framework de auditoria web
+golismero,1,2,Framework de auditoria web
+vega,1,2,Scanner de vulnerabilidades web
+wapiti,1,2,Scanner web
+enum4linux,1,2,Enumeracion SMB
+enum4linux-ng,1,2,Enumeracion SMB
+smbclient,1,2,Enumeracion SMB
+smbmap,1,2,Enumeracion SMB
+smbget,1,2,Descarga SMB
+rpcclient,1,2,Enumeracion RPC
+rpcinfo,1,2,Enumeracion RPC
+nbrute,1,2,Fuerza bruta NetBIOS
+nbtscan,1,2,Escaneo NetBIOS
+ldapsearch,1,2,Enumeracion LDAP
+ldapdomaindump,1,2,Volcado LDAP
+ldapenum,1,2,Enumeracion LDAP
+bloodhound,1,2,Enumeracion Active Directory
+sharphound,1,2,Recoleccion AD para BloodHound
+adidnsdump,1,2,Volcado DNS de Active Directory
+snmpwalk,1,2,Enumeracion SNMP
+snmpcheck,1,2,Enumeracion SNMP
+snmpenum,1,2,Enumeracion SNMP
+onesixtyone,1,2,Escaneo SNMP
+snmp-check,1,2,Enumeracion SNMP
+showmount,1,2,Enumeracion NFS
+rpcbind,1,2,Enumeracion RPC
+finger,1,2,Enumeracion de usuarios
+rusers,1,2,Enumeracion de usuarios remotos
+rwho,1,2,Enumeracion de usuarios remotos
+smtp-user-enum,1,2,Enumeracion de usuarios SMTP
+swaks,1,2,Enumeracion SMTP
+sendemail,1,2,Pruebas SMTP
+nessus,1,2,Scanner de vulnerabilidades
+openvas,1,2,Scanner de vulnerabilidades
+nuclei,1,2,Scanner de vulnerabilidades con templates
+vulnscan,1,2,Scanner de vulnerabilidades
+nexpose,1,2,Scanner de vulnerabilidades
+qualys,1,2,Scanner de vulnerabilidades
+tenable,1,2,Scanner de vulnerabilidades
+greenbone,1,2,Scanner de vulnerabilidades
+wpscan,1,2,Scanner WordPress
+joomscan,1,2,Scanner Joomla
+droopescan,1,2,Scanner Drupal
+cmseek,1,2,Identificacion de CMS
+cmsmap,1,2,Identificacion de CMS
+magescan,1,2,Scanner Magento
+typo3scan,1,2,Scanner TYPO3
+vbscan,1,2,Scanner vBulletin
+sslyze,1,2,Analisis SSL
+sslscan,1,2,Analisis SSL
+testssl,1,2,Analisis SSL y TLS
+tlssled,1,2,Analisis TLS
+tlsfuzzer,1,2,Fuzzing TLS
+sslstrip,1,2,Ataque SSL stripping
+odat,1,2,Enumeracion Oracle
+tnscmd10g,1,2,Enumeracion Oracle TNS
+sidguesser,1,2,Descubrimiento SID Oracle
+webanalyze,1,2,Identificacion de tecnologias web
+sniper,1,2,Reconocimiento y enumeracion automatizada
+reconspider,1,2,Reconocimiento automatizado
+nmap-vulners,1,2,Escaneo de vulnerabilidades con nmap
+dnscan,1,2,Enumeracion DNS
+subbrute,1,2,Fuerza bruta de subdominios
+shuffledns,1,2,Enumeracion de subdominios
+puredns,1,2,Enumeracion de subdominios
+altdns,1,2,Mutacion de subdominios
+gotestwaf,1,2,Pruebas WAF
+whatwaf,1,2,Deteccion de WAF
+bypass-firewalls-by-dns-history,1,2,Bypass de firewall
+cloudflare-bypass,1,2,Bypass Cloudflare
+msf-oracle-enum,1,2,Enumeracion Oracle via Metasploit
+responder,2,3,Envenenamiento LLMNR y NBT-NS
+mitm6,2,3,Ataque MitM IPv6
+bettercap,2,3,Framework MitM
+ettercap,2,3,Intercepcion de trafico MitM
+arpspoof,2,3,Envenenamiento ARP
+dnsspoof,2,3,Envenenamiento DNS
+evilginx,2,3,Phishing de credenciales
+evilginx2,2,3,Phishing de credenciales avanzado
+modlishka,2,3,Proxy de phishing
+muraena,2,3,Proxy de phishing
+hydra,2,3,Fuerza bruta de credenciales
+medusa,2,3,Fuerza bruta de credenciales
+ncrack,2,3,Fuerza bruta de red
+patator,2,3,Fuerza bruta multiprotocolo
+thc-hydra,2,3,Fuerza bruta de credenciales
+brutespray,2,3,Fuerza bruta automatizada
+crowbar,2,3,Fuerza bruta RDP y SSH
+spray,2,3,Password spraying
+ruler,2,3,Ataque Exchange
+crackmapexec,2,3,Movimiento lateral Windows
+evil-winrm,2,3,Acceso remoto Windows WinRM
+psexec.py,2,3,Ejecucion remota SMB
+wmiexec.py,2,3,Ejecucion remota WMI
+smbexec.py,2,3,Ejecucion remota SMB
+atexec.py,2,3,Ejecucion remota ATsvc
+dcomexec.py,2,3,Ejecucion remota DCOM
+impacket-psexec,2,3,Ejecucion remota SMB
+impacket-wmiexec,2,3,Ejecucion remota WMI
+impacket-smbexec,2,3,Ejecucion remota SMB
+impacket-atexec,2,3,Ejecucion remota ATsvc
+impacket-dcomexec,2,3,Ejecucion remota DCOM
+kerbrute,2,3,Fuerza bruta Kerberos
+rubeus,2,3,Ataques Kerberos Windows
+getTGT.py,2,3,Obtencion de TGT Kerberos
+getST.py,2,3,Obtencion de ST Kerberos
+getNPUsers.py,2,3,AS-REP Roasting
+getUserSPNs.py,2,3,Kerberoasting
+impacket,2,3,Suite de ataques Windows
+impacket-GetNPUsers,2,3,AS-REP Roasting
+impacket-GetUserSPNs,2,3,Kerberoasting
+impacket-secretsdump,3,4,Volcado de credenciales
+sqlmap,2,3,Inyeccion SQL automatizada
+ghauri,2,3,Inyeccion SQL avanzada
+nosqlmap,2,3,Inyeccion NoSQL
+mongoaudit,2,3,Auditoria MongoDB
+xsser,2,3,Inyeccion XSS automatizada
+dalfox,2,3,Inyeccion XSS
+xsstrike,2,3,Inyeccion XSS avanzada
+commix,2,3,Inyeccion de comandos OS
+tplmap,2,3,Inyeccion de plantillas SSTI
+sstimap,2,3,Inyeccion de plantillas SSTI
+beef,2,3,Framework de explotacion web
+beef-xss,2,3,Framework de explotacion web
+beefxss,2,3,Framework de explotacion web
+msfconsole,2,3,Framework Metasploit
+metasploit,2,3,Framework Metasploit
+armitage,2,3,GUI Metasploit
+searchsploit,2,3,Busqueda de exploits
+exploitdb,2,3,Base de datos de exploits
+setoolkit,2,3,Kit de ingenieria social
+se-toolkit,2,3,Kit de ingenieria social
+msfvenom,4,5,Generacion de payloads
+yersinia,2,3,Ataques de capa 2
+cobaltstrike,2,3,Framework C2 avanzado
+empire,4,5,Framework post-explotacion
+powershell-empire,4,5,Framework post-explotacion PowerShell
+starkiller,4,5,GUI para Empire
+sliver,4,5,Framework C2
+covenant,4,5,Framework C2 .NET
+havoc,4,5,Framework C2
+merlin,4,5,Framework C2
+brute-force,2,3,Ataque de fuerza bruta generico
+john,3,4,Cracking de contrasenas
+hashcat,3,4,Cracking de contrasenas GPU
+ophcrack,3,4,Cracking con tablas rainbow
+rainbowcrack,3,4,Cracking con tablas rainbow
+fcrackzip,3,4,Cracking de archivos ZIP
+rarcrack,3,4,Cracking de archivos RAR
+pdfcrack,3,4,Cracking de PDFs
+zip2john,3,4,Extraccion hash ZIP
+rar2john,3,4,Extraccion hash RAR
+pdf2john,3,4,Extraccion hash PDF
+office2john,3,4,Extraccion hash Office
+keepass2john,3,4,Extraccion hash KeePass
+ssh2john,3,4,Extraccion hash SSH
+pgp2john,3,4,Extraccion hash PGP
+bitlocker2john,3,4,Extraccion hash BitLocker
+luks2john,3,4,Extraccion hash LUKS
+7z2john,3,4,Extraccion hash 7zip
+mimikatz,3,4,Volcado de credenciales Windows
+pypykatz,3,4,Mimikatz en Python
+lsassy,3,4,Volcado LSASS remoto
+secretsdump.py,3,4,Volcado de credenciales
+lazagne,3,4,Recuperacion de contrasenas almacenadas
+credentialfinder,3,4,Busqueda de credenciales
+linpeas,3,4,Enumeracion de privilegios Linux
+linpeas.sh,3,4,Enumeracion de privilegios Linux
+linux-exploit-suggester,3,4,Sugeridor de exploits Linux
+linux-exploit-suggester-2,3,4,Sugeridor de exploits Linux
+lse.sh,3,4,Enumeracion de seguridad Linux
+LinEnum,3,4,Enumeracion Linux
+linenum,3,4,Enumeracion Linux
+linuxprivchecker,3,4,Comprobador de privilegios Linux
+winpeas,3,4,Enumeracion de privilegios Windows
+winpeas.exe,3,4,Enumeracion de privilegios Windows
+seatbelt,3,4,Enumeracion de seguridad Windows
+watson,3,4,Sugeridor de exploits Windows
+sherlock,3,4,Busqueda de vulnerabilidades Windows
+powerup,3,4,Escalada de privilegios PowerShell
+jaws,3,4,Auditoria de seguridad Windows
+wesng,3,4,Sugeridor de exploits Windows
+pspy,3,4,Monitoreo de procesos Linux
+pspy32,3,4,Monitoreo de procesos Linux 32bit
+pspy64,3,4,Monitoreo de procesos Linux 64bit
+snoopy,3,4,Registro de actividad de procesos
+strace,3,4,Trazado de llamadas al sistema
+ltrace,3,4,Trazado de llamadas a librerias
+dtrace,3,4,Trazado dinamico del sistema
+lsof,3,4,Listado de archivos abiertos
+volatility,3,4,Analisis de memoria forense
+volatility3,3,4,Analisis de memoria forense v3
+rekall,3,4,Framework de analisis de memoria
+strings,3,4,Extraccion de cadenas de binarios
+binwalk,3,4,Analisis de firmware
+foremost,3,4,Recuperacion de archivos
+scalpel,3,4,Recuperacion de archivos
+bulk_extractor,3,4,Extraccion de datos forense
+autopsy,3,4,Suite forense grafica
+sleuthkit,3,4,Suite de herramientas forenses
+ghidra,3,4,Ingenieria inversa NSA
+radare2,3,4,Framework de ingenieria inversa
+r2,3,4,Framework de ingenieria inversa
+rizin,3,4,Fork de radare2
+binaryninja,3,4,Plataforma de ingenieria inversa
+ida,3,4,Desensamblador IDA Pro
+ida64,3,4,Desensamblador IDA Pro 64bit
+x64dbg,3,4,Depurador Windows
+ollydbg,3,4,Depurador Windows
+gdb,3,4,Depurador GNU
+pwndbg,3,4,Extension GDB para exploits
+peda,3,4,Extension GDB para exploits
+pwntools,3,4,Framework de desarrollo de exploits
+tcpdump,3,4,Captura de trafico de red
+wireshark,3,4,Analizador de protocolos de red
+tshark,3,4,Wireshark en linea de comandos
+pyshark,3,4,Wrapper Python para Wireshark
+ngrep,3,4,Busqueda en trafico de red
+pcapfix,3,4,Reparacion de archivos PCAP
+aircrack-ng,3,4,Cracking de redes WiFi
+airodump-ng,3,4,Captura de trafico WiFi
+aireplay-ng,3,4,Inyeccion de paquetes WiFi
+airbase-ng,3,4,AP falso WiFi
+airmon-ng,3,4,Modo monitor WiFi
+besside-ng,3,4,Cracking automatico WiFi
+kismet,3,4,Detector de redes WiFi
+wifite,3,4,Auditor automatico WiFi
+wifite2,3,4,Auditor automatico WiFi v2
+reaver,3,4,Ataque WPS
+pixiewps,3,4,Ataque Pixie Dust WPS
+bully,3,4,Ataque WPS
+hashid,3,4,Identificacion de tipo de hash
+hash-identifier,3,4,Identificacion de tipo de hash
+name-that-hash,3,4,Identificacion de tipo de hash
+haiti,3,4,Identificacion de tipo de hash
+cewl,3,4,Generador de wordlists desde webs
+crunch,3,4,Generador de wordlists
+cupp,3,4,Generador de wordlists personalizadas
+rsmangler,3,4,Manipulacion de wordlists
+mentalist,3,4,Generador de contrasenas
+dumpntds,3,4,Volcado de Active Directory
+secretsdump,3,4,Volcado de secretos Windows
+drsuapi,3,4,Replicacion AD DCSync
+dcsync,3,4,Ataque DCSync Active Directory
+goldenticket,3,4,Creacion de Golden Ticket Kerberos
+silvertticket,3,4,Creacion de Silver Ticket Kerberos
+socat,4,5,Tunel de datos bidireccional
+chisel,4,5,Tunel TCP sobre HTTP
+ligolo,4,5,Tunel de red para pentesting
+ligolo-ng,4,5,Tunel de red avanzado
+ligolo-proxy,4,5,Proxy ligolo
+proxychains,4,5,Encadenado de proxies
+proxychains4,4,5,Encadenado de proxies v4
+proxychains-ng,4,5,Encadenado de proxies ng
+proxifier,4,5,Redireccion de trafico
+sshuttle,4,5,VPN sobre SSH
+iodine,4,5,Tunel DNS
+dns2tcp,4,5,Tunel TCP sobre DNS
+dnscat,4,5,Tunel y C2 sobre DNS
+dnscat2,4,5,Tunel y C2 sobre DNS v2
+dnstunnel,4,5,Tunel DNS
+icmpsh,4,5,Shell inversa sobre ICMP
+ptunnel,4,5,Tunel TCP sobre ICMP
+pwncat,4,5,Shell inversa avanzada
+pwncat-cs,4,5,Shell inversa avanzada community
+shellescape,4,5,Escape de shell restringida
+veil,4,5,Framework de evasion AV
+veil-evasion,4,5,Evasion de antivirus
+shellter,4,5,Inyeccion de shellcode en PE
+hyperion,4,5,Cifrado de ejecutables
+backdoor-factory,4,5,Insercion de backdoors en binarios
+steghide,4,5,Esteganografia en imagenes
+outguess,4,5,Esteganografia
+openstego,4,5,Esteganografia
+snow,4,5,Esteganografia en texto
+jsteg,4,5,Esteganografia en JPEG
+invoke-obfuscation,4,5,Ofuscacion de PowerShell
+chameleon,4,5,Evasion de PowerShell
+amsi-bypass,4,5,Bypass de AMSI Windows
+donut,4,5,Generacion de shellcode
+sgn,4,5,Codificacion de shellcode
+scarecrow,4,5,Bypass de EDR
+ghostwriter,4,5,Plataforma de red team
+cobalt-strike,4,5,Framework C2 comercial
+brute-ratel,4,5,Framework C2
+nighthawk,4,5,Framework C2 avanzado
+nps,4,5,Servidor proxy inverso
+frp,4,5,Proxy inverso rapido
+rathole,4,5,Tunel TCP/UDP inverso
+gost,4,5,Tunel de red Go
+reGeorg,4,5,Tunel HTTP
+neo-regeorg,4,5,Tunel HTTP mejorado
+tunna,4,5,Tunel sobre HTTP
+pivotnacci,4,5,Pivoting sobre HTTP
+rpivot,4,5,Pivoting reverso
+3proxy,4,5,Servidor proxy multiprotocolo
+microsocks,4,5,Proxy SOCKS minimalista
+pwnat,4,5,Tunel NAT a NAT
+ssf,4,5,Secure Socket Funneling
+gsocket,4,5,Shell cifrada global
+cryptcat,4,5,Netcat cifrado
+dbd,4,5,Backdoor cifrado
+ncrack,4,5,Cracking de autenticacion de red
+routersploit,4,5,Explotacion de routers
+exploitation-framework,4,5,Framework de explotacion generico
+pupy,4,5,RAT multiplataforma
+quasar,4,5,RAT Windows
+asyncrat,4,5,RAT asincrono
+nanocore,4,5,RAT Windows
+remcos,4,5,RAT comercial
+njrat,4,5,RAT basico
+darkcomet,4,5,RAT antiguo
+mimipy,3,4,Mimikatz en Python puro
+impacket-addcomputer,2,3,Adicion de equipos al dominio
+impacket-changepasswd,2,3,Cambio de contrasena MSRPC
+impacket-dpapi,3,4,Descifrado DPAPI
+impacket-esentutl,3,4,Acceso a base de datos ESE
+impacket-exchanger,2,3,Ataques a Exchange
+impacket-findDelegation,1,2,Busqueda de delegaciones AD
+impacket-getArch,1,2,Deteccion de arquitectura remota
+impacket-karmaSMB,2,3,Servidor SMB malicioso
+impacket-lookupsid,1,2,Enumeracion de SIDs
+impacket-mimikatz,3,4,Volcado de credenciales
+impacket-mqtt_check,1,2,Verificacion MQTT
+impacket-mssqlclient,2,3,Cliente MSSQL
+impacket-mssqlinstance,1,2,Descubrimiento MSSQL
+impacket-net,1,2,Comandos net remotos
+impacket-netview,1,2,Enumeracion de sesiones
+impacket-nmapAnswerMachine,0,1,Responder de sondas nmap
+impacket-ntfs-read,3,4,Lectura directa NTFS
+impacket-ntlmrelayx,2,3,Relay de autenticacion NTLM
+impacket-ping,0,1,Ping ICMP con impacket
+impacket-raiseChild,2,3,Escalada de dominio hijo a padre
+impacket-rbcd,2,3,Delegacion basada en recursos
+impacket-reg,3,4,Acceso remoto al registro
+impacket-registry-read,3,4,Lectura del registro Windows
+impacket-rpcdump,1,2,Volcado de endpoints RPC
+impacket-samrdump,3,4,Volcado SAM remoto
+impacket-services,1,2,Enumeracion de servicios remotos
+impacket-smbpasswd,2,3,Cambio de contrasena SMB
+impacket-smbserver,2,3,Servidor SMB malicioso
+impacket-sniff,0,1,Captura de trafico con impacket
+impacket-split,3,4,Division de capturas
+impacket-ticketConverter,3,4,Conversion de tickets Kerberos
+impacket-ticketer,3,4,Creacion de tickets Kerberos
+impacket-tstool,1,2,Herramienta de timestamps
+impacket-wmiquery,1,2,Consultas WMI remotas
+printerbug,2,3,Abuso de spooler de impresora
+petitpotam,2,3,Coercion de autenticacion NTLM
+dfscoerce,2,3,Coercion NTLM via DFS
+shadowcoerce,2,3,Coercion NTLM via VSS
+certifried,2,3,Escalada via certificados AD
+certipy,2,3,Ataques a AD CS
+certify,2,3,Enumeracion AD CS
+adcs-attack,2,3,Ataques a servicios de certificados AD
+pywhisker,3,4,Manipulacion de msDS-KeyCredentialLink
+gettgtpkinit,3,4,Obtencion TGT via certificado
+pkinittools,3,4,Herramientas PKINIT Kerberos
+pyrdp,2,3,Proxy RDP malicioso
+rdp-sec-check,1,2,Verificacion de seguridad RDP
+rdesktop,2,3,Cliente RDP
+freerdp,2,3,Cliente RDP libre
+xfreerdp,2,3,Cliente RDP con soporte NLA
+nmap-smb-scripts,1,2,Scripts nmap para SMB
+nmap-http-scripts,1,2,Scripts nmap para HTTP
+nmap-vuln-scripts,1,2,Scripts nmap de vulnerabilidades
+msf-smb-login,2,3,Login SMB via Metasploit
+msf-ssh-login,2,3,Login SSH via Metasploit
+msf-ftp-login,2,3,Login FTP via Metasploit
+msf-telnet-login,2,3,Login Telnet via Metasploit
+msf-mssql-login,2,3,Login MSSQL via Metasploit
+msf-mysql-login,2,3,Login MySQL via Metasploit
+msf-postgres-login,2,3,Login PostgreSQL via Metasploit
+msf-oracle-login,2,3,Login Oracle via Metasploit
+msf-vnc-login,2,3,Login VNC via Metasploit
+msf-rdp-login,2,3,Login RDP via Metasploit
+msf-http-login,2,3,Login HTTP via Metasploit
+spray6,2,3,Password spraying IPv6
+o365spray,2,3,Password spraying Office 365
+trevorspray,2,3,Password spraying Microsoft
+dnsrecon,1,2,Enumeracion y reconocimiento DNS
+theHarvester,0,1,Recoleccion de informacion OSINT
+subdomainizer,0,1,Descubrimiento de subdominios en JS
+linkfinder,1,2,Descubrimiento de endpoints en JS
+jsfinder,1,2,Busqueda de rutas en JavaScript
+secretfinder,1,2,Busqueda de secretos en JavaScript
+trufflehog,3,4,Busqueda de secretos en repositorios
+gitleaks,3,4,Deteccion de secretos en Git
+gitrob,3,4,Busqueda de datos sensibles en GitHub
+git-dumper,3,4,Volcado de repositorios Git expuestos
+gittools,3,4,Herramientas para explotar Git expuesto
+dvcs-ripper,3,4,Extraccion de repositorios expuestos
+aws-cli,3,4,Acceso a servicios AWS
+awscli,3,4,Acceso a servicios AWS
+boto3,3,4,SDK AWS en Python
+pacu,3,4,Framework de explotacion AWS
+cloudsplaining,1,2,Analisis de politicas IAM AWS
+prowler,1,2,Auditoria de seguridad AWS
+scoutsuite,1,2,Auditoria multi-cloud
+cartography,1,2,Analisis de infraestructura cloud
+cloudmapper,1,2,Analisis de redes AWS
+cloudbrute,1,2,Fuerza bruta de buckets cloud
+s3scanner,1,2,Enumeracion de buckets S3
+bucket-finder,1,2,Descubrimiento de buckets S3
+grayhatwarfare,1,2,Busqueda de buckets publicos
+lazys3,1,2,Busqueda de buckets S3 mal configurados
+cloud-enum,1,2,Enumeracion de recursos cloud
+azurehound,1,2,Recoleccion de datos Azure AD
+roadtools,1,2,Framework de herramientas Azure AD
+stormspotter,1,2,Visualizacion de ataques Azure
+microburst,2,3,Herramientas de ataque Azure
+powerzure,3,4,Post-explotacion Azure
+msticpy,3,4,Herramientas de investigacion Microsoft
+o365creeper,1,2,Enumeracion de usuarios Office 365
+bof-collection,3,4,BOFs para Cobalt Strike
+invoke-ninjacopy,3,4,Copia sigilosa de archivos Windows
+invoke-mimikatz,3,4,Mimikatz en memoria PowerShell
+invoke-bloodhound,1,2,BloodHound desde PowerShell
+powersploit,3,4,Framework post-explotacion PowerShell
+nishang,3,4,Scripts ofensivos PowerShell
+empire-modules,4,5,Modulos de Empire
+mettle,4,5,Agente Metasploit avanzado
+meterpreter,4,5,Shell avanzada Metasploit
+shellcode-exec,4,5,Ejecucion de shellcode
+process-injection,4,5,Inyeccion de procesos
+dll-injection,4,5,Inyeccion de DLLs
+reflective-injection,4,5,Inyeccion reflectiva
+process-hollowing,4,5,Vaciado de procesos
+parent-spoofing,4,5,Suplantacion de proceso padre
+token-impersonation,4,5,Suplantacion de tokens Windows
+incognito,4,5,Manipulacion de tokens Windows
+getsystem,3,4,Escalada de privilegios Metasploit
+bypassuac,3,4,Bypass de UAC Windows
+eventvwr,3,4,Bypass UAC via eventvwr
+fodhelper,3,4,Bypass UAC via fodhelper
+cmstp,3,4,Bypass UAC via CMSTP
+sdclt,3,4,Bypass UAC via sdclt
+slui,3,4,Bypass UAC via slui
+pkgmgr,3,4,Bypass UAC via pkgmgr
+sysprep,3,4,Bypass UAC via sysprep
+pwsh,3,4,PowerShell Core para post-explotacion
+powershell,3,4,PowerShell para post-explotacion
+wscript,3,4,Ejecucion de scripts Windows
+cscript,3,4,Ejecucion de scripts Windows
+regsvr32,3,4,Bypass AppLocker via regsvr32
+mshta,3,4,Ejecucion HTA para bypass
+rundll32,3,4,Ejecucion DLL para bypass
+certutil,3,4,Descarga y decodificacion Windows
+bitsadmin,4,5,Transferencia de archivos Windows BITS
+wmic,3,4,Administracion remota WMI
+at,3,4,Ejecucion diferida Windows
+schtasks,3,4,Tareas programadas Windows
+sc,3,4,Control de servicios Windows
+reg,3,4,Modificacion del registro Windows
+netsh,3,4,Configuracion de red Windows
+bcdedit,3,4,Modificacion del arranque Windows
+vssadmin,3,4,Administracion de instantaneas Windows
+ntdsutil,3,4,Administracion de Active Directory
+dsquery,1,2,Consultas LDAP en Active Directory
+dsget,1,2,Obtencion de atributos AD
+net,1,2,Administracion de red Windows
+net1,1,2,Administracion de red Windows alternativo
+nltest,1,2,Pruebas de confianza de dominio
+adfind,1,2,Busqueda en Active Directory
+adexplorer,1,2,Explorador de Active Directory
+psloggedon,1,2,Sesiones activas en sistemas remotos
+psexec,2,3,Ejecucion remota Sysinternals
+paexec,2,3,Ejecucion remota alternativa
+remcom,2,3,Ejecucion remota lightweight
+winexe,2,3,Ejecucion remota Linux a Windows
+wce,3,4,Extractor de credenciales Windows
+fgdump,3,4,Volcado de hashes Windows
+pwdump,3,4,Volcado de hashes SAM
+pwdump7,3,4,Volcado de hashes SAM v7
+cachedump,3,4,Volcado de credenciales cacheadas
+lsadump,3,4,Volcado de secretos LSA
+ntsecuritytools,3,4,Herramientas de seguridad NT
+wsl,3,4,Subsistema Windows para Linux
+wsl2,3,4,Subsistema Windows para Linux v2
+sshdump,3,4,Extraccion de claves SSH
+keydump,3,4,Extraccion de claves de cifrado
+dploot,3,4,Volcado DPAPI en red
+hekatomb,3,4,Extraccion masiva de secretos DPAPI
+dpapimk2john,3,4,Extraccion hash DPAPI Master Key
+msf-post-hashdump,3,4,Volcado de hashes via Metasploit
+msf-post-enum,1,2,Enumeracion via Metasploit
+msf-auxiliary-scanner,1,2,Escaneo con auxiliares Metasploit
+adb,1,2,Depuracion Android
+apktool,3,4,Descompilacion APK
+jadx,3,4,Desensamblado APK
+dex2jar,3,4,Conversion DEX a JAR
+jd-gui,3,4,Descompilador Java
+androguard,3,4,Analisis de malware Android
+apkleaks,3,4,Busqueda de secretos en APK
+mobsf,1,2,Analisis estatico y dinamico movil
+objection,3,4,Runtime exploration movil con Frida
+frida,3,4,Instrumentacion dinamica
+frida-tools,3,4,Herramientas Frida
+drozer,1,2,Framework de auditoria Android
+needle,1,2,Framework de auditoria iOS
+jtool,3,4,Analisis de binarios macOS
+class-dump,3,4,Extraccion de cabeceras Objective-C
+otool,3,4,Analisis de binarios macOS
+nm,3,4,Listado de simbolos de binarios
+objdump,3,4,Desensamblado de binarios
+readelf,3,4,Analisis de binarios ELF
+checksec,3,4,Verificacion de protecciones de binarios
+patchelf,3,4,Modificacion de binarios ELF
+pwninit,3,4,Configuracion de entorno de exploit
+one_gadget,3,4,Busqueda de gadgets ROP
+ROPgadget,3,4,Busqueda de gadgets ROP
+ropper,3,4,Busqueda de gadgets ROP y JOP
+rabin2,3,4,Analisis de binarios radare2
+rasm2,3,4,Ensamblador radare2
+rax2,3,4,Conversor de formatos radare2
+addr2line,3,4,Conversion de direcciones a lineas
+pwntools,3,4,Framework Python para exploits
+angr,3,4,Analisis binario simbolico
+z3,3,4,Solver SMT para CTF
+trivy,1,2,Scanner de vulnerabilidades en contenedores
+grype,1,2,Scanner de vulnerabilidades en imagenes
+syft,1,2,Generador de SBOM para contenedores
+clair,1,2,Analisis estatico de contenedores
+anchore,1,2,Politicas de seguridad en contenedores
+docker-bench-security,1,2,Auditoria de seguridad Docker
+deepce,2,3,Enumeracion de escapes Docker
+botb,2,3,Break Out The Box contenedores
+cdk,2,3,Kit de explotacion de contenedores
+kubebench,1,2,Auditoria de seguridad Kubernetes
+kube-hunter,1,2,Busqueda de vulnerabilidades Kubernetes
+kube-score,1,2,Analisis estatico de manifiestos K8s
+kubectl,1,2,Herramienta CLI de Kubernetes
+etcdctl,3,4,Acceso a base de datos etcd
+kubeletctl,2,3,Ejecucion remota en kubelet
+helm,1,2,Gestion de paquetes Kubernetes
+falco,1,2,Deteccion de anomalias en tiempo real
+tracee,1,2,Trazado de eventos del sistema
+sipvicious,1,2,Suite de auditoria VoIP
+svmap,1,2,Escaneo de dispositivos SIP
+svwar,1,2,Enumeracion de extensiones SIP
+svcrack,2,3,Fuerza bruta credenciales SIP
+sipdump,3,4,Captura de autenticacion SIP
+sipsak,1,2,Herramienta de pruebas SIP
+inviteflood,2,3,Flood de peticiones SIP INVITE
+rtpflood,2,3,Flood de trafico RTP
+ike-scan,1,2,Escaneo y fingerprinting IPsec
+ikeforce,2,3,Fuerza bruta IPsec IKE
+ikescan,1,2,Descubrimiento de VPN IPsec
+firmwalker,1,2,Busqueda de datos sensibles en firmware
+firmlyzer,1,2,Analisis de firmware
+expliot,1,2,Framework de explotacion IoT
+flashrom,3,4,Lectura y escritura de memorias flash
+openocd,3,4,Depuracion de hardware embebido
+avrdude,3,4,Programacion de microcontroladores AVR
+esptool,3,4,Herramienta para chips ESP
+jtagulator,1,2,Identificacion de puertos JTAG
+ubertooth-util,1,2,Captura de trafico Bluetooth
+bluing,1,2,Reconocimiento Bluetooth
+crackle,3,4,Cracking de cifrado BLE
+btlejack,3,4,Sniffing y ataques BLE
+rfcat,1,2,Herramienta de radio frecuencia
+hackrf,1,2,SDR para analisis de RF
+gqrx,1,2,Receptor SDR
+gnuradio,1,2,Framework de procesado de senales
+universal-radio-hacker,3,4,Analisis de protocolos RF
+redis-cli,2,3,Explotacion de Redis
+redis-rogue-server,2,3,Servidor Redis malicioso
+elasticdump,3,4,Volcado de datos Elasticsearch
+mongodump,3,4,Volcado de base de datos MongoDB
+mongorestore,3,4,Restauracion MongoDB
+cqlsh,2,3,Shell Cassandra
+neo4j-shell,2,3,Shell Neo4j
+sqsh,2,3,Cliente Sybase/MSSQL
+pgcli,2,3,Cliente PostgreSQL avanzado
+mycli,2,3,Cliente MySQL avanzado
+mssqlclient,2,3,Cliente MSSQL interactivo
+sqlcmd,2,3,Cliente MSSQL Microsoft
+osql,2,3,Cliente MSSQL antiguo
+oraclesql,2,3,Cliente Oracle SQL
+ms17-010,2,3,Exploit EternalBlue SMB
+eternalblue,2,3,Exploit NSA SMB
+doublepulsar,2,3,Backdoor NSA
+bluekeep,2,3,Exploit RDP CVE-2019-0708
+printnightmare,3,4,Escalada via spooler de impresion
+log4shell,2,3,Exploit Log4j RCE
+spring4shell,2,3,Exploit Spring Framework RCE
+shellshock,2,3,Exploit Bash CVE-2014-6271
+heartbleed,3,4,Lectura de memoria OpenSSL
+dirtycow,3,4,Escalada de privilegios Linux kernel
+dirtypipe,3,4,Escalada de privilegios Linux kernel
+polkit,3,4,Escalada de privilegios via polkit
+pwnkit,3,4,Escalada de privilegios pkexec
+sudo-brute,2,3,Fuerza bruta sudo
+logrotate-exploit,3,4,Escalada via logrotate
+cron-exploit,3,4,Escalada via cronjobs
+path-hijacking,3,4,Hijacking de PATH para escalada
+suid-exploit,3,4,Explotacion de binarios SUID
+wildcard-injection,3,4,Inyeccion de wildcards
+cap-exploit,3,4,Explotacion de Linux capabilities
+nfs-exploit,3,4,Explotacion de NFS mal configurado
+docker-escape,3,4,Escape de contenedor Docker
+lxd-exploit,3,4,Escape via LXD
+lxc-exploit,3,4,Escape via LXC
+msiexec,3,4,Ejecucion via MSI Windows
+regsvcs,3,4,Bypass AppLocker regsvcs
+regasm,3,4,Bypass AppLocker regasm
+installutil,3,4,Bypass AppLocker installutil
+wuauclt,3,4,Proxy de ejecucion Windows Update
+ftp,4,5,Transferencia de archivos FTP
+tftp,4,5,Transferencia de archivos TFTP
+makecab,4,5,Compresion y exfiltracion Windows
+extrac32,4,5,Extraccion de archivos Windows
+expand,4,5,Expansion de archivos Windows
+esentutl,3,4,Copia de archivos bloqueados Windows
+robocopy,4,5,Copia robusta de archivos Windows
+xcopy,4,5,Copia de archivos Windows
+replace,4,5,Reemplazo de archivos Windows
+debug,4,5,Escritura de binarios via debug.exe
+thefatrat,4,5,Generador de payloads con evasion
+unicorn,4,5,Magic Unicorn PowerShell payload
+psbypassclm,4,5,Bypass de Constrained Language Mode
+revokobf,4,5,Ofuscacion de PowerShell reverso
+invoke-obfuscation,4,5,Ofuscacion de comandos PowerShell
+amsibypass,4,5,Bypass de AMSI
+amsi-bypass,4,5,Evasion de AMSI Windows
+scarecrow,4,5,Evasion de EDR con cargadores
+donut,4,5,Conversion de payloads a shellcode
+sgn,4,5,Codificacion de shellcode SGN
+pe-bear,3,4,Analisis de ejecutables PE
+pesieve,3,4,Deteccion de inyeccion en procesos
+moneta,3,4,Escaner de anomalias en memoria
+patriot,3,4,Deteccion de tecnicas de evasion
+hollows-hunter,3,4,Deteccion de vaciado de procesos
+nps,4,5,Servidor proxy reverso NPS
+frp,4,5,Proxy reverso rapido en Go
+rathole,4,5,Tunel TCP y UDP inverso
+gost,4,5,Tunel de red multipropocolo Go
+reGeorg,4,5,Tunel webshell HTTP
+neo-regeorg,4,5,Tunel webshell HTTP mejorado
+tunna,4,5,Encapsulado de conexiones sobre HTTP
+pivotnacci,4,5,Pivoting sobre sesiones HTTP
+rpivot,4,5,Proxy SOCKS reverso
+microsocks,4,5,Proxy SOCKS5 minimalista
+pwnat,4,5,Tunel NAT sin configuracion
+stunnel,4,5,Tunel SSL
+stunnel4,4,5,Tunel SSL v4
+haproxy,4,5,Proxy y balanceador de carga
+gsocket,4,5,Shell cifrada global anonima
+revsocks,4,5,SOCKS5 reverso
+socks5-server,4,5,Servidor SOCKS5 para pivoting
+dns-shell,4,5,Shell sobre consultas DNS
+icmp-shell,4,5,Shell sobre paquetes ICMP
+http-shell,4,5,Shell sobre peticiones HTTP
+pyc2,4,5,C2 ligero en Python
+nimplant,4,5,Implante C2 en Nim
+shad0w,4,5,Framework C2 modular
+villain,4,5,Framework de shells reversas
+hoaxshell,4,5,Shell inversa sobre HTTP
+hackbrowserdata,3,4,Extraccion de datos de navegadores
+lazagne,3,4,Recuperacion de contrasenas almacenadas
+mimipenguin,3,4,Volcado de credenciales Linux
+swap_digger,3,4,Extraccion de datos del archivo swap
+linikatz,3,4,Mimikatz para Linux
+hindsight,3,4,Analisis forense de Chrome
+dumpzilla,3,4,Extraccion de datos Firefox
+firepwd,3,4,Descifrado de contrasenas Firefox
+chromepass,3,4,Extraccion de contrasenas Chrome
+webbrowserpassview,3,4,Extraccion de contrasenas de navegadores
+mailpv,3,4,Extraccion de contrasenas de correo
+netpass,3,4,Extraccion de credenciales de red Windows
+wirelesskeyview,3,4,Extraccion de claves WiFi
+credentialsfileview,3,4,Extraccion de credenciales Windows
+vaultpasswordview,3,4,Extraccion del vault de Windows
+keyfinder,3,4,Busqueda de claves de cifrado en memoria
+sessiongopher,3,4,Extraccion de sesiones guardadas
+seatbelt,3,4,Auditoria de configuracion Windows
+sharpup,3,4,Escalada de privilegios .NET
+sharpwmi,1,2,Enumeracion WMI en .NET
+sharphound,1,2,Recoleccion de datos AD para BloodHound
+sharpview,1,2,Port .NET de PowerView
+sharpappslocker,1,2,Enumeracion de AppLocker
+sharpdpapi,3,4,Extraccion de secretos DPAPI en .NET
+sharpdump,3,4,Volcado de procesos en .NET
+sharpchrome,3,4,Extraccion de datos Chrome en .NET
+sharpclipboard,3,4,Monitoreo del portapapeles
+sharpexfiltrate,4,5,Exfiltracion de datos en .NET
+rubeus,2,3,Ataques Kerberos en .NET
+certify,1,2,Enumeracion de AD CS en .NET
+certipy,2,3,Ataques a servicios de certificados AD
+ldeep,1,2,Enumeracion LDAP
+windapsearch,1,2,Busqueda LDAP en AD
+adalanche,1,2,Analisis de rutas de ataque AD
+plumhound,1,2,Analisis de BloodHound automatizado
+cypheroth,1,2,Consultas BloodHound automatizadas
+goddi,1,2,Volcado de informacion de dominio
+cme,2,3,CrackMapExec alias
+evil-winrm,2,3,Shell WinRM Ruby
+powercat,4,5,Netcat en PowerShell
+nishang,3,4,Scripts ofensivos PowerShell
+invokepowershellremoting,4,5,Shell remota PowerShell
+powerspraying,2,3,Password spraying PowerShell
+dementor,2,3,Coercion de autenticacion
+printerbug,2,3,Coercion via spooler
+petitpotam,2,3,Coercion NTLM via MS-EFSR
+coercer,2,3,Herramienta de coercion NTLM
+ntlmrelayx,2,3,Relay de credenciales NTLM
+multirelay,2,3,Relay multiple NTLM
+lnkbomb,2,3,Phishing con archivos LNK
+hashgrab,3,4,Captura de hashes NTLM
+internal-monologue,3,4,Extraccion de hashes sin volcado
+nanodump,3,4,Volcado sigiloso de LSASS
+handlekatz,3,4,Volcado LSASS via handles duplicados
+procdump,3,4,Volcado de procesos Sysinternals
+minidump,3,4,Volcado minidump de LSASS
+outflank-lsass,3,4,Volcado sigiloso de LSASS
+silverfort,3,4,Extraccion de credenciales silverfort
+meg,0,1,Peticiones HTTP masivas a rutas
+unfurl,0,1,Analisis y descomposicion de URLs
+qsreplace,1,2,Manipulacion de parametros GET
+anew,0,1,Agregacion de nuevas lineas
+httpmethods,1,2,Comprobacion de metodos HTTP
+cors-scanner,1,2,Deteccion de misconfiguraciones CORS
+corsy,1,2,Escaner CORS
+ssrf-sheriff,2,3,Deteccion de SSRF
+gopherus,2,3,Generacion de payloads SSRF Gopher
+smuggler,2,3,Deteccion de HTTP Request Smuggling
+h2csmuggler,2,3,Smuggling via HTTP/2
+bp-smuggler,2,3,Deteccion de smuggling Burp
+403bypasser,1,2,Bypass de respuestas 403
+nomore403,1,2,Bypass de restricciones 403
+byp4xx,1,2,Bypass de codigos 4xx
+jwt-tool,2,3,Manipulacion y ataque de JWT
+jwt-cracker,3,4,Cracking de secretos JWT
+jwt-hack,2,3,Framework de ataques JWT
+graphql-cop,1,2,Auditoria de seguridad GraphQL
+clairvoyance,1,2,Descubrimiento de esquemas GraphQL
+batchql,2,3,Ataques de batching GraphQL
+inql,1,2,Scanner GraphQL para Burp
+webshell,2,3,Subida y ejecucion de webshell
+weevely,2,3,Webshell PHP avanzada
+laudanum,2,3,Coleccion de webshells
+b374k,2,3,Webshell PHP
+c99,2,3,Webshell PHP clasica
+r57,2,3,Webshell PHP clasica
+p0wny-shell,2,3,Webshell PHP minimalista
+goshell,2,3,Webshell en Go
+ashx-shell,2,3,Webshell ASP.NET
+aspx-shell,2,3,Webshell ASPX
+jsp-shell,2,3,Webshell JSP
+cfm-shell,2,3,Webshell ColdFusion
+perl-shell,2,3,Webshell Perl
+py-shell,2,3,Webshell Python
+sh-shell,2,3,Webshell shell script
+php-reverse-shell,2,3,Reverse shell PHP
+pentestmonkey,2,3,Scripts de reverse shells
+msf-web-delivery,2,3,Entrega de payload web Metasploit
+postenum,3,4,Enumeracion post-explotacion Linux
+uptux,3,4,Escalada de privilegios en Linux
+traitor,3,4,Explotacion automatica de privilegios Linux
+pwncat,4,5,Framework de post-explotacion interactivo
+gtfo,3,4,Explotacion de binarios GTFOBins
+gtfobins,3,4,Referencia de binarios Linux explotables
+lolbas,3,4,Referencia de binarios Windows explotables
+filescan,3,4,Busqueda de archivos sensibles
+linspy,3,4,Espionaje de procesos Linux
+unhide,3,4,Deteccion de procesos ocultos
+chkrootkit,3,4,Deteccion de rootkits
+rkhunter,3,4,Deteccion de rootkits
+unhide-tcp,3,4,Deteccion de puertos ocultos
+unhide-linux,3,4,Deteccion de procesos ocultos Linux
+flame,4,5,Malware de espionaje avanzado APT
+duqu,4,5,Malware de espionaje APT
+stuxnet,4,5,Malware industrial APT
+regin,4,5,Framework de espionaje APT
+turla,4,5,Framework APT ruso
