@@ -1,0 +1,7 @@
+id,nombre,riesgo
+0,Inici,0
+1,Reconeixament,1
+2,Enumeració,2
+3,Escalada,3
+4,Lectura de dades,4
+5,Exfiltració,5
