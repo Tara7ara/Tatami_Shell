@@ -3,6 +3,7 @@ import re
 import random
 import datetime
 import posixpath
+"""Import de todos los comandos falsos, maquinas de estados, varriables y funciones aux."""
 from comandos import (
     ComandoWhoami, ComandoNoEncontrado, ComandoPwd, ComandoLs, ComandoDir,
     ComandoClear, ComandoHistory, ComandoCat, ComandoVi,
@@ -18,7 +19,7 @@ from comandos import (
     ComandoDf, ComandoFree, ComandoUptime, ComandoCrontab, ComandoAlias,
     ARCHIVOS_DIR, VIRTUAL_DIRS, VIRTUAL_FS, ENV_VARS, _add_entry,
 )
-from grafo import muntar_xarxa_paranoid
+from grafo import muntar_xarxa_paranoid, trobar_millor_fase
 from patrons import escanear_logs
 
 ALIASES = {
@@ -28,6 +29,8 @@ ALIASES = {
 }
 
 def _make_banner():
+    """Genera el banner d'inici d'Ubuntu 22.04 amb data, carrega i darrer login aleatoris per simular un servidor real."""
+    """El tema de la data i la carga s'ha fet amb IA"""
     now = datetime.datetime.now(datetime.timezone.utc)
     delta = datetime.timedelta(hours=random.randint(2, 8), minutes=random.randint(0, 59))
     last_login = now - delta
@@ -52,8 +55,11 @@ def _make_banner():
 
 
 class TatamiShell:
+    """Shell principal del honeypot. Gestiona el bucle d'entrada, els logs i la maquina d'estats carregada des de grafo.py. Els comandos son instanciats des de comandos.py."""
+
     def __init__(self):
-        self.fase_actual = muntar_xarxa_paranoid()
+        """Inicialitza la shell: carrega el graf de grafo.py, crea el fitxer de log a archivos i registra tots els binaris disponibles."""
+        self.fase_actual, self.totes_fases = muntar_xarxa_paranoid()
         self.logs  = []
         self.cwd   = "/home/ubuntu"
         os.makedirs(ARCHIVOS_DIR, exist_ok=True)
@@ -61,6 +67,7 @@ class TatamiShell:
         n = len(existing) + 1
         self.log_path = os.path.join(ARCHIVOS_DIR, f"LOG{n}.log")
 
+        """Todos los comandos falsos disponibles"""
         self.binarios = {
             "whoami":    ComandoWhoami,
             "pwd":       ComandoPwd,
@@ -122,6 +129,7 @@ class TatamiShell:
         }
 
     def _setup_readline(self):
+        """Configura l'autocompletat per tabulador usant els noms de binaris i els arxius virtuals de LS_DATA a comandos.py."""
         try:
             import readline
             from comandos import LS_DATA, _extra_for
@@ -148,6 +156,7 @@ class TatamiShell:
             pass
 
     def _expand_vars(self, text):
+        """Substitueix variables d'entorn ($VAR o ${VAR}) usant el diccionari ENV_VARS de comandos.py."""
         env = {**ENV_VARS, "PWD": self.cwd, "OLDPWD": self.cwd}
         def _sub(m):
             key = m.group(1) or m.group(2)
@@ -155,6 +164,7 @@ class TatamiShell:
         return re.sub(r'\$\{(\w+)\}|\$(\w+)', _sub, text)
 
     def _run_one(self, cmd_str, stdin=None):
+        """Executa una sola comanda: resol aliases, redireccions (>) i instancia la classe corresponent de comandos.py."""
         cmd_str = self._expand_vars(cmd_str.strip())
         if not cmd_str:
             return ""
@@ -200,6 +210,7 @@ class TatamiShell:
         return out or ""
 
     def _run_pipeline(self, cmd_str):
+        """Executa una cadena de comandes separades per pipes (|), passant la sortida de cada una com a stdin de la seguent."""
         pipe_parts = re.split(r'(?<!\|)\|(?!\|)', cmd_str)
         if len(pipe_parts) == 1:
             return self._run_one(cmd_str.strip())
@@ -209,6 +220,7 @@ class TatamiShell:
         return output
 
     def _run_compound(self, cmd_raw):
+        """Executa comandes compostes separades per ; i &&, i actualitza la fase del graf de grafo.py despres de cada grup."""
         for seq_group in re.split(r'\s*;\s*', cmd_raw):
             and_parts = re.split(r'\s*&&\s*', seq_group)
             for i, part in enumerate(and_parts):
@@ -217,15 +229,17 @@ class TatamiShell:
                     print(out)
                 if i < len(and_parts) - 1 and not out:
                     break
-            nova_fase = self.fase_actual.on_vaig(seq_group.strip())
+            nova_fase = trobar_millor_fase(seq_group.strip(), self.fase_actual, self.totes_fases)
             if nova_fase:
                 self.fase_actual = nova_fase
 
     def _prompt(self):
+        """Retorna el prompt de bash substituint /home/ubuntu per ~ per simular un terminal Ubuntu real."""
         display = self.cwd.replace("/home/ubuntu", "~")
         return f"ubuntu@ubuntu-server:{display}$ "
 
     def arrancar(self):
+        """Bucle principal d'entrada. En sortir crida escanear_logs de patrons.py i guarda el resum de la sessio a archivos/LOGn.log."""
         print(_make_banner())
         self._setup_readline()
 
@@ -260,11 +274,13 @@ class TatamiShell:
             f.write(f"[{ts}] Patrones: {', '.join(amenazas) if amenazas else 'Ninguno'}\n")
 
     def _log(self, cmd):
+        """Escriu la comanda amb timestamp al fitxer de log actiu a archivos/LOGn.log."""
         ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(self.log_path, "a", encoding="utf-8") as f:
             f.write(f"[{ts}] - {cmd}\n")
 
     def _cd(self, args):
+        """Gestiona el canvi de directori validant la ruta contra VIRTUAL_DIRS de comandos.py."""
         if not args or args[0] in ("~", ""):
             self.cwd = "/home/ubuntu"
             return ""
