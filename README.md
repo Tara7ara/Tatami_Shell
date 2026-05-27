@@ -198,3 +198,116 @@ S'ha utilitzat IA per a tasques específiques no funcionals:
 - Formatació de sortides del monitor
 
 La lògica, algoritmes i funcionalitat del honeypot són completament originals.
+
+## Diagrama README
+
+```mermaid
+flowchart LR
+    subgraph Shell["TatamiShell (main.py)"]
+        A["Atacant / Input"] --> B["Parser de Comandos<br/>• Pipes |<br/>• Redirection ><br/>• &&, ;"]
+        B --> C["Buscar en binarios<br/>O(1) Dict Hash"]
+        C --> D["Instanciar Comando<br/>ComandoHoneypot"]
+        D --> E["Ejecutar .executar()"]
+    end
+
+    subgraph Comands["Comandos Simulados (comandos.py)"]
+        F["45+ Subclases"]
+        G["ComandoWhoami"]
+        H["ComandoLs"]
+        I["ComandoSudo"]
+        J["ComandoWget"]
+        K["ComandoNoEncontrado"]
+        F --> G
+        F --> H
+        F --> I
+        F --> J
+        F --> K
+    end
+
+    subgraph Enrichment["Enriquecimiento (enriquecedor.py)"]
+        L["¿Comanda en binarios?"]
+        M["Buscar en bbdd_comandos.csv<br/>O(1)"]
+        N["Escribir CSV"]
+        L -->|NO| M
+        M -->|EXISTE| N
+        N --> O["transicions.csv"]
+        N --> P["patrons.csv"]
+    end
+
+    subgraph Graph["Máquina de Estados (grafo.py)"]
+        Q["trobar_millor_fase()<br/>O(f×t×c)"]
+        R["Leer fases.csv"]
+        S["Leer transicions.csv"]
+        T["Cambiar fase_actual<br/>0→1→2→3→4→5"]
+        Q --> R
+        Q --> S
+        S --> T
+    end
+
+    subgraph Patterns["Detección de Patrones (patrons.py)"]
+        U["caçar_patro()<br/>O(n×m)"]
+        V["Leer patrons.csv"]
+        W["Buscar subsequencias"]
+        U --> V
+        V --> W
+    end
+
+    subgraph Logs["Captura Forense (archivos/)"]
+        X["LOGn.log"]
+        Y["sudo_passwords.txt"]
+        Z["mysql_passwords.txt"]
+        AA["downloads/"]
+        AB["editados/"]
+        AC["creados/"]
+        AD["eliminados/"]
+        AE["redireccionados/"]
+    end
+
+    subgraph Monitor["Monitor en Vivo (monitor.py)"]
+        AF["find_latest_log()"]
+        AG["parse_log()"]
+        AH["detect_phase()<br/>Detecta dinámicamente"]
+        AI["read_file()"]
+        AJ["count_dir()"]
+        AK["render()<br/>Dashboard cada 2s"]
+        AL["generate_evidencia()<br/>Al Ctrl+C"]
+        AF --> AG
+        AG --> AH
+        AG --> AI
+        AG --> AJ
+        AI --> AK
+        AJ --> AK
+        AK --> AL
+    end
+
+    subgraph CSV["Configuración Dinámica (CSV)"]
+        AM["fases.csv<br/>id | nombre | riesgo"]
+        AN["transicions.csv<br/>desde | clave | hasta"]
+        AO["patrons.csv<br/>nombre | comandos"]
+        AP["bbdd_comandos.csv<br/>860+ herramientas"]
+    end
+
+    E --> F
+    E --> L
+    E --> X
+    E --> Q
+    L -->|SÍ| E
+    L -->|NO| K
+    Q --> T
+    T --> U
+    U --> W
+    W --> X
+    AF --> AM
+    AF --> AN
+    AF --> AO
+    AP --> M
+
+    style Shell fill:#ffcccc
+    style Comands fill:#ffdd99
+    style Enrichment fill:#ffaa66
+    style Graph fill:#99ccff
+    style Patterns fill:#99ff99
+    style Logs fill:#dd99ff
+    style Monitor fill:#ffcccc
+    style CSV fill:#ffffcc
+```
