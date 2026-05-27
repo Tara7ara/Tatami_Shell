@@ -301,13 +301,4 @@ flowchart LR
     AF --> AN
     AF --> AO
     AP --> M
-
-    style Shell fill:#ffcccc
-    style Comands fill:#ffdd99
-    style Enrichment fill:#ffaa66
-    style Graph fill:#99ccff
-    style Patterns fill:#99ff99
-    style Logs fill:#dd99ff
-    style Monitor fill:#ffcccc
-    style CSV fill:#ffffcc
 ```
