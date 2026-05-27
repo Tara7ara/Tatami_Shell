@@ -185,6 +185,38 @@ En tancar-lo amb Ctrl+C genera `Evidencia_LOGX.txt` amb l'informe complet de la 
 | Construcció de `ls -l` | O(e) — e = entrades extra del directori |
 | Detecció de fase al monitor | O(t) — t = nombre de transicions al CSV |
 
+## Ús de POO i Polimorfisme
+
+### Herència
+Totes les comandes hereten de la classe `ComandoHoneypot`:
+```python
+class ComandoHoneypot:
+    def __init__(self, args, cwd):
+        self.args = args
+        self.cwd = cwd
+    
+    def executar(self):
+        raise NotImplementedError
+
+class ComandoWhoami(ComandoHoneypot):
+    def executar(self):
+        return "ubuntu"
+
+class ComandoLs(ComandoHoneypot):
+    def executar(self):
+        #implementació específica ls
+```
+
+### Polimorfisme
+El mètode `executar()` es sobrescrit en cadascuna de les 45+ subclases, permettent que `main.py` les tractí totes de la mateixa manera:
+
+```python
+cmd_obj = self.binarios[base](args, self.cwd)  #Crea instància dinàmica
+out = cmd_obj.executar()  #********Crida polimòrfica
+```
+
+Gràcies al polimorfisme, afegir una nova comanda només requereix crear una nova subclasse sense modificar `main.py`.
+
 ## Demo
 
 Vídeo de demostració del projecte en funcionament, amb un atacant simulat navegant el honeypot i el monitor detectant les fases en temps real.
