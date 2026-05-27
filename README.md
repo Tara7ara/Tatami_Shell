@@ -199,7 +199,7 @@ S'ha utilitzat IA per a tasques específiques no funcionals:
 
 La lògica, algoritmes i funcionalitat del honeypot són completament originals.
 
-## Diagrama README
+## Diagrama
 
 ```mermaid
 flowchart LR
@@ -210,7 +210,7 @@ flowchart LR
         D --> E["Ejecutar .executar()"]
     end
 
-    subgraph Comands["Comandos Simulados (comandos.py)"]
+    subgraph Comands["Comandos.py"]
         F["45+ Subclases"]
         G["ComandoWhoami"]
         H["ComandoLs"]
@@ -224,7 +224,7 @@ flowchart LR
         F --> K
     end
 
-    subgraph Enrichment["Enriquecimiento (enriquecedor.py)"]
+    subgraph Enrichment["Enriquecedor.py"]
         L["¿Comanda en binarios?"]
         M["Buscar en bbdd_comandos.csv<br/>O(1)"]
         N["Escribir CSV"]
@@ -234,7 +234,7 @@ flowchart LR
         N --> P["patrons.csv"]
     end
 
-    subgraph Graph["Máquina de Estados (grafo.py)"]
+    subgraph Graph["Grafo.py"]
         Q["trobar_millor_fase()<br/>O(f×t×c)"]
         R["Leer fases.csv"]
         S["Leer transicions.csv"]
@@ -244,7 +244,7 @@ flowchart LR
         S --> T
     end
 
-    subgraph Patterns["Detección de Patrones (patrons.py)"]
+    subgraph Patterns["Patrons.py"]
         U["caçar_patro()<br/>O(n×m)"]
         V["Leer patrons.csv"]
         W["Buscar subsequencias"]
@@ -252,7 +252,7 @@ flowchart LR
         V --> W
     end
 
-    subgraph Logs["Captura Forense (archivos/)"]
+    subgraph Logs["Archiuvos"]
         X["LOGn.log"]
         Y["sudo_passwords.txt"]
         Z["mysql_passwords.txt"]
@@ -263,7 +263,7 @@ flowchart LR
         AE["redireccionados/"]
     end
 
-    subgraph Monitor["Monitor en Vivo (monitor.py)"]
+    subgraph Monitor["Monitor.py"]
         AF["find_latest_log()"]
         AG["parse_log()"]
         AH["detect_phase()<br/>Detecta dinámicamente"]
@@ -280,7 +280,7 @@ flowchart LR
         AK --> AL
     end
 
-    subgraph CSV["Configuración Dinámica (CSV)"]
+    subgraph CSV["CSV"]
         AM["fases.csv<br/>id | nombre | riesgo"]
         AN["transicions.csv<br/>desde | clave | hasta"]
         AO["patrons.csv<br/>nombre | comandos"]
