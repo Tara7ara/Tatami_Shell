@@ -212,7 +212,7 @@ El mètode `executar()` es sobrescrit en cadascuna de les 45+ subclases, permett
 
 ```python
 cmd_obj = self.binarios[base](args, self.cwd)  #Crea instància dinàmica
-out = cmd_obj.executar()  #********Crida polimòrfica
+out = cmd_obj.executar()  #Crida polimòrfica
 ```
 
 Gràcies al polimorfisme, afegir una nova comanda només requereix crear una nova subclasse sense modificar `main.py`.
