@@ -1,17 +1,20 @@
 import os
+import csv
 import time
 import datetime
 import glob
 
 ARCHIVOS_DIR = os.path.join(os.path.dirname(__file__), "archivos")
-
+_BASE = os.path.dirname(__file__)
+"""La parte visual, se ha hecho con IA, pero el código de lectura de logs, detección de fases y generación de evidencias es completamente original."""
 
 def find_latest_log():
+    """Retorna el fitxer LOG*.log mes recent de la carpeta archivos/, o None si no n'hi ha cap."""
     logs = glob.glob(os.path.join(ARCHIVOS_DIR, "LOG*.log"))
     return max(logs, key=os.path.getmtime) if logs else None
 
-
 def parse_log(path):
+    """Parseja un fitxer de log generat per main.py i retorna una llista de tuples (timestamp, comanda)."""
     if not path or not os.path.exists(path):
         return []
     entries = []
@@ -26,39 +29,60 @@ def parse_log(path):
                     pass
     return entries
 
-
 def read_file(fname):
+    """Llegeix un fitxer de la carpeta archivos/ (p.ex. sudo_passwords.txt) i retorna les seves linies no buides."""
     path = os.path.join(ARCHIVOS_DIR, fname)
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8", errors="replace") as f:
         return [l.strip() for l in f if l.strip()]
 
-
 def count_dir(subdir):
+    """Compta i llista els fitxers d'un subdirectori de archivos/ (downloads, editados, creados, eliminados, redireccionados)."""
     path = os.path.join(ARCHIVOS_DIR, subdir)
     if not os.path.exists(path):
         return 0, []
     items = os.listdir(path)
     return len(items), items
 
+def _leer_transicions():
+    """Llegeix transicions.csv en cada cicle i retorna un diccionari {clau: fase_destino} per a la deteccio dinamica de fases."""
+    path = os.path.join(_BASE, "transicions.csv")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {row["clave"]: int(row["hasta"]) for row in csv.DictReader(f)}
+
+def _leer_fases():
+    """Llegeix fases.csv i retorna un diccionari {id: nombre} per mostrar el nom de la fase detectada."""
+    path = os.path.join(_BASE, "fases.csv")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {int(row["id"]): row["nombre"] for row in csv.DictReader(f)}
+
+_RIESGO_LABEL = {5: "CRITICO", 4: "ALTO", 3: "ALTO", 2: "MEDIO", 1: "BAJO"}
 
 def detect_phase(cmds):
-    flat = " ".join(c for _, c in cmds).lower()
-    if any(x in flat for x in ["wget", "curl", "nc ", "base64", "scp"]):
-        return "EXFILTRACION (riesgo CRITICO)"
-    if any(x in flat for x in ["cat credential", "cat .ssh", "cat /etc/shadow", "mysql", ".bash_history"]):
-        return "LECTURA DE DATOS (riesgo ALTO)"
-    if any(x in flat for x in ["sudo", "chmod", "su "]):
-        return "ESCALADA DE PRIVILEGIOS (riesgo ALTO)"
-    if any(x in flat for x in ["cat /etc/passwd", "find", "ps ", "netstat", "uname", "id "]):
-        return "ENUMERACION (riesgo MEDIO)"
-    if any(x in flat for x in ["ls", "pwd", "whoami", "who", "hostname"]):
-        return "RECONOCIMIENTO (riesgo BAJO)"
-    return "INICIAL (sin actividad)"
+    """Determina la fase de major risc detectada llegint dinamicament transicions.csv i fases.csv en cada refresc."""
+    transicions = _leer_transicions()
+    fases       = _leer_fases()
+    flat        = " ".join(c for _, c in cmds).lower()
 
+    max_fase = max(
+        (fase_id for clave, fase_id in transicions.items() if clave in flat),
+        default=0,
+    )
+
+    if max_fase == 0:
+        return "INICIAL (sin actividad)"
+
+    nombre = fases.get(max_fase, "Desconocida").upper()
+    label  = _RIESGO_LABEL.get(max_fase, "DESCONOCIDO")
+    return f"{nombre} (riesgo {label})"
 
 def render():
+    """Refresca la pantalla del monitor cada 2 segons mostrant fase, credencials capturades, activitat de fitxers i comandes sospechoses."""
     log_path = find_latest_log()
     cmds     = parse_log(log_path)
 
@@ -122,11 +146,12 @@ def render():
     print()
 
 def generate_evidencia(log_path):
+    """Genera el fitxer Evidencia_LOGn.txt a archivos/ amb el resum complet de la sessio en tancar el monitor amb Ctrl+C."""
     if not log_path:
         return
 
-    log_name   = os.path.basename(log_path)                      # LOG1.log
-    log_number = ''.join(filter(str.isdigit, log_name))          # 1
+    log_name   = os.path.basename(log_path)
+    log_number = ''.join(filter(str.isdigit, log_name))
     out_path   = os.path.join(ARCHIVOS_DIR, f"Evidencia_LOG{log_number}.txt")
 
     cmds        = parse_log(log_path)
@@ -190,8 +215,8 @@ def generate_evidencia(log_path):
 
     print(f"\nEvidencia guardada en: {out_path}")
 
-
 def main():
+    """Bucle principal del monitor. Crida render() cada 2 segons i en sortir genera l'evidencia via generate_evidencia."""
     log_path = None
     try:
         while True:
@@ -201,7 +226,6 @@ def main():
     except KeyboardInterrupt:
         print("\nMonitor detenido.")
         generate_evidencia(log_path)
-
 
 if __name__ == "__main__":
     main()

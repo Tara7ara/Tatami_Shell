@@ -1,0 +1,19 @@
+nombre,comandos
+Reconocimiento básico,"whoami,ls"
+Reconocimiento completo,"whoami,id,uname,ps"
+Enumeración de red,"netstat,ss"
+Análisis de servicios,"ps,systemctl"
+Búsqueda de credenciales,"find,cat"
+Lectura de credenciales,"cat,credentials"
+Acceso a base de datos,"ps,mysql"
+Intento escalada privilegios,"sudo,chmod"
+Escalada + lectura,"sudo,cat"
+Exfiltración por netcat,"cat,nc"
+Exfiltración web,"cat,wget"
+Reverse shell básico,"bash,nc"
+Reverse shell python,"python3,nc"
+Reconocimiento + exfiltración,"whoami,find,wget"
+Fuerza bruta,hydra
+Reconocimiento ICMP,ping
+Tunel de datos bidireccional,socat
+Fuerza bruta de credenciales,hydra
