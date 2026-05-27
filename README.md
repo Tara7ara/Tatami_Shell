@@ -185,7 +185,7 @@ En tancar-lo amb Ctrl+C genera `Evidencia_LOGX.txt` amb l'informe complet de la 
 | Construcció de `ls -l` | O(e) — e = entrades extra del directori |
 | Detecció de fase al monitor | O(t) — t = nombre de transicions al CSV |
 
-## Ús de POO i Polimorfisme
+## Ús de POO i polimorfisme
 
 ### Herència
 Totes les comandes hereten de la classe `ComandoHoneypot`:
